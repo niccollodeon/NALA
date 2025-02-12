@@ -13,6 +13,8 @@
   <meta name="author" content="" />
   <link rel="icon" href="images/iNUvators_20240915_235832_0000-Photoroom.png">
   <script src="https://unpkg.com/scrollreveal"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
   <title>iNUvators</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -147,31 +149,61 @@
           <div class="carousel slide slider_image_carousel carousel-fade" data-ride="carousel">
             <div class="all">
               <div class="containers">
-                <div class="wrappers">
-                  <div class="text-input">
-                    <!-- Textareas for ASR input and translated text -->
-                    <textarea class="from-text" id="textToTranslate" spellcheck="true" placeholder="Enter Text"></textarea>
-                    <textarea class="to-text"  id="translation" readonly spellcheck="true" placeholder="Translation"></textarea>
+                <div class="card input-wrapper">
+                  <div class="from">
+                    <span class="heading">From :</span>
+                    <div class="dropdown-container" id="input-language">
+                      <div class="dropdown-toggle">
+                        <ion-icon name="globe-outline"></ion-icon>
+                        <span class="selected" data-value="auto">Auto Detect</span>
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                      </div>
+                      <ul class="dropdown-menu">
+                        <li class="option active">DropDown Menu Item 1</li>
+                        <li class="option">DropDown Menu Item 2</li>
+                      </ul>
+                    </div>
                   </div>
-                  <ul class="controls">
-                    <li class="row from">
-                      <div class="icons">
-                        <i id="from" class="fas fa-volume-up"></i>
-                        <i id="from" class="fas fa-copy"></i>
-                      </div>
-                    </li>
-                    <li class="row to">
-                      <div class="icons">
-                        <i id="to" class="fas fa-volume-up"></i>
-                        <i id="to" class="fas fa-copy"></i>
-                      </div>
-                    </li>
-                  </ul>
+                  <div class="text-area">
+                    <textarea
+                      id="input-text"
+                      cols="30"
+                      rows="10"
+                      placeholder="Enter your text here"
+                    ></textarea>
+                    <div class="chars"><span id="input-chars">0</span> / 5000</div>
+                  </div>
                 </div>
-                <!-- Separate buttons for speech recognition and translation -->
-                <button id="start-recognition" onclick="translateText()">Translate</button>
-              </div>
-          </div>
+                <div class="center">
+                  <div class="swap-position">
+                    <ion-icon name="swap-horizontal-outline"></ion-icon>
+                  </div>
+                </div>
+          
+                <div class="card output-wrapper">
+                  <div class="to">
+                    <span class="heading">To :</span>
+                    <div class="dropdown-container" id="output-language">
+                      <div class="dropdown-toggle">
+                        <ion-icon name="globe-outline"></ion-icon>
+                        <span class="selected" data-value="en">English</span>
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                      </div>
+                      <ul class="dropdown-menu">
+                        <li class="option active">DropDown Menu Item 1</li>
+                        <li class="option">DropDown Menu Item 2</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <textarea
+                    id="output-text"
+                    cols="30"
+                    rows="10"
+                    placeholder="Translated text will appear here"
+                    disabled
+                  ></textarea>
+                </div>
+            </div>
           </div>
         </div>
       </div>
@@ -315,12 +347,11 @@
     </div>
   </footer>
 </div>
- 
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="js/custom.js"></script>
+  <script type="module" src="js/custom.js"></script>
 </body>
 
 </html>
